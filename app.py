@@ -92,7 +92,7 @@ def analyze_sentiment(df):
     }
 
     def compound_to_star(comp):
-        # ⭐ not touching your logic here (only using it for accuracy)
+        
         if comp <= -0.6:
             return 1
         elif comp <= 0.2:
@@ -109,7 +109,7 @@ def analyze_sentiment(df):
     df.dropna(subset=["User Rating"], inplace=True)
     df["User Rating"] = df["User Rating"].astype(int)
 
-    # 🔹 Calculate accuracy between user rating and sentiment-based predicted rating
+    
     if len(df) > 0:
         acc = accuracy_score(df["User Rating"], df["Predicted Rating"])
         accuracy_percent = round(acc * 100, 2)
